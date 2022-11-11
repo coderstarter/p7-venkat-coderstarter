@@ -8,8 +8,8 @@
 .iconfooter {
     margin-left: 2%;
     float: left;
-    height: 30px;
-    width: 50px;
+    height: 0px;
+    width: 90px;
 }
 
 .containerBox {
@@ -41,7 +41,42 @@
 .icons {
     display: inline;
     margin-right: 200px;
-    padding-top: 500px;
+    padding-top: 800px;
+    margin-top: 500px;
     color: white;
     font-family: "Lato";
+}
+
+.left-view {
+    padding: 25px;
+    margin-top: 18px
+}
+
+.songs {
+    border: 1px solid black;
+    margin-left: 55px;
+    padding-right: 10px;
+}
+
+.song-name {
+    width: 200px;
+    height: 50px;
+    display: inline;
+}
+
+
+.song-name,
+.singer-name {
+    display: inline;
+}
+
+.singer-name {
+    width: 110px;
+    height: 50px;
+    padding-bottom: 150px;
+}
+
+.control-button-main {
+    margin-top: 10px;
+    margin-left: 800px;
 }
