@@ -1,0 +1,20 @@
+The script processor executes Javascript code to process an event. The processor uses a pure Go implementation of ECMAScript 5.1 and has no external
+dependencies. This can be useful in situations where one of the other processors doesn’t provide the functionality you need to filter events.
+
+The processor can be configured by embedding Javascript in your configuration file or by pointing the processor at external file(s).
+
+processors:
+  - script:
+      lang: javascript
+      source: >
+        function process(event) {
+            event.Tag("js");
+        }
+        
+        
+This loads filter.js from disk.
+
+processors:
+  - script:
+      lang: javascript
+      file: ${path.config}/filter.js
