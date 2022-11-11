@@ -1,0 +1,14 @@
+The CSSOM and DOM trees are combined into a render tree, which is then used to compute the layout of each visible element and serves as an input to the 
+paint process that renders the pixels to screen. Optimizing each of these steps is critical to achieving optimal rendering performance.
+
+In the previous section on constructing the object model, we built the DOM and the CSSOM trees based on the HTML and CSS input. However, both of these are
+independent objects that capture different aspects of the document: one describes the content, and the other describes the style rules that need to be 
+applied to the document.
+
+TL;DR #
+The DOM and CSSOM trees are combined to form the render tree.
+Render tree contains only the nodes required to render the page.
+Layout computes the exact position and size of each object.
+The last step is paint, which takes in the final render tree and renders the pixels to the screen.
+First, the browser combines the DOM and CSSOM into a "render tree," which captures all the visible DOM content on the page and all the CSSOM style 
+information for each node.
