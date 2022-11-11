@@ -1,0 +1,45 @@
+Question : When a user enters an URL in the browser, how does the browser fetch the desiredresult ?
+Answer : 
+        URL stands for Uniform Recource Locator
+        A URL is the address of the website which we can find in the adress bar of your browser. It is a reference on the internet, be it images, hypertext
+        pages, audio/video etc.
+
+        Example : https://www.apple.com
+
+        DNS came into picture, when we put a URL in address bar of browser.
+        DNS stands for Domain Name system. It maintain and maps the name of website which is URL and particular IP address it links to it. Every URL on the internet
+        has a unique IP address which is of the computer which hosts the server of the website requested.
+
+        For Example:
+            When you point your browser at a URL like https://uselessiphones.com, your browser has to figure out which server on the Internet 
+            is hosting the site. It does this by looking up the domain, uselessiphones.com, to find the address.
+
+        Each device on the Internet — servers, cell phones, your smart refrigerator — all have a unique address called an IP address. An IP address
+        contains four numbered parts:
+
+        203.0.113.0
+
+        But numbers like this are hard to remember! That’s where domain names come in. uselessiphones.com is much easier to remember than 203.0.113.0,
+
+        Imagine having to remember all the phone numbers of your contacts without having the Contacts app on your phone. Your Contacts app lets you look 
+        up phone numbers by name.
+        We do the same on the Internet. The domain name system, or DNS, is like the Contacts app on our phone. DNS helps our browser (and us) find servers
+        on the Internet. We can do a DNS lookup to find the IP address of the server based on the domain name.
+        
+        Background Process when we search a query or enters a URL
+        1. Browser checks cache for DNS entry to find the corresponding IP address of website.
+        It looks for following cache. If not found in one, then continues checking to the next until found.
+            Browser Cache
+            Operating Systems Cache
+            Router Cache
+            ISP Cache
+
+        2. If not found in cache, ISP’s (Internet Service Provider) DNS server initiates a DNS query to find IP address of server that hosts the domain 
+        name. The requests are sent using small data packets that contain information content of request and IP address it is destined for.
+
+        3. Browser initiates a TCP (Transfer Control Protocol) connection with the server using synchronize(SYN) and acknowledge(ACK) messages.
+        4. Browser sends an HTTP request to the web server. GET or POST request.
+        5. Server on the host computer handles that request and sends back a response. It assembles a response in some format like JSON, XML and HTML.
+        6. Server sends out an HTTP response along with the status of response.
+        7. Browser displays HTML content
+        8. Finally, Done.
