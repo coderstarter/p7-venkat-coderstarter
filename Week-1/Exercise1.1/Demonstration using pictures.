@@ -5,7 +5,11 @@ Let’s imagine that you want to access maps.google.com to check the exact time 
 
 1. You type maps.google.com into the address bar of your browser.
 2. The browser checks the cache for a DNS record to find the corresponding IP address of maps.google.com.
-DNS(Domain Name System) is a database that maintains the name of the website (URL) and the particular IP address it links to. Every single URL on the internet has a unique IP address assigned to it. The IP address belongs to the computer which hosts the server of the website we are requesting to access. For example, www.google.com has an IP address of 209.85.227.104. So if you’d like, you can reach www.google.com by typing http://209.85.227.104 on your browser. DNS is a list of URLs, and their IP addresses, like how a phone book is a list of names and their corresponding phone numbers.
+DNS(Domain Name System) is a database that maintains the name of the website (URL) and the particular IP address it links to. Every single URL on the 
+internet has a unique IP address assigned to it. The IP address belongs to the computer which hosts the server of the website we are requesting to access.
+
+For example, www.google.com has an IP address of 209.85.227.104. So if you’d like, you can reach www.google.com by typing http://209.85.227.104 on your 
+browser. DNS is a list of URLs, and their IP addresses, like how a phone book is a list of names and their corresponding phone numbers.
 
 The primary purpose of DNS is human-friendly navigation. You can easily access a website by typing the correct IP address for it on your browser, but imagine having to remember different sets of numbers for all the sites we regularly access? Therefore, it is easier to remember the name of the website using a URL and let DNS do the work for us by mapping it to the correct IP.
 
@@ -22,24 +26,40 @@ To find the DNS record, the browser checks four caches.
 You may wonder why there are so many caches maintained at so many levels. Although our information being cached somewhere doesn’t make us feel very comfortable when it comes to privacy, caches are essential for regulating network traffic and improving data transfer times.
 
 3. If the requested URL is not in the cache, ISP’s DNS server initiates a DNS query to find the IP address of the server that hosts maps.google.com.
-As mentioned earlier, for my computer to connect with the server that hosts maps.google.com, I need the IP address of maps.google.com. The purpose of a DNS query is to search multiple DNS servers on the internet until it finds the correct IP address for the website. This type of search is called a recursive search since the search will repeatedly continue from a DNS server to a DNS server until it either finds the IP address we need or returns an error response saying it was unable to find it.
+As mentioned earlier, for my computer to connect with the server that hosts maps.google.com, I need the IP address of maps.google.com. The purpose of a
+DNS query is to search multiple DNS servers on the internet until it finds the correct IP address for the website. This type of search is called a recursive
+search since the search will repeatedly continue from a DNS server to a DNS server until it either finds the IP address we need or returns an error response
+saying it was unable to find it.
 
-In this situation, we would call the ISP’s DNS server a DNS recursor whose responsibility is to find the proper IP address of the intended domain name by asking other DNS servers on the internet for an answer. The other DNS servers are called name servers since they perform a DNS search based on the domain architecture of the website domain name.
+In this situation, we would call the ISP’s DNS server a DNS recursor whose responsibility is to find the proper IP address of the intended domain name by
+asking other DNS servers on the internet for an answer. The other DNS servers are called name servers since they perform a DNS search based on the domain 
+architecture of the website domain name.
 
 Without further confusing you, I’d like to use the following diagram to explain the domain architecture.
 
 
 https://webhostinggeeks.com/guides/dns/
-Many website URLs we encounter today contain a third-level domain, a second-level domain, and a top-level domain. Each of these levels contains their own name server, which is queried during the DNS lookup process.
+Many website URLs we encounter today contain a third-level domain, a second-level domain, and a top-level domain. Each of these levels contains their own
+name server, which is queried during the DNS lookup process.
 
-For maps.google.com, first, the DNS recursor will contact the root name server. The root name server will redirect it to the .com domain name server. .com name server will redirect it to the google.com name server. The google.com name server will find the matching IP address for maps.google.com in its’ DNS records and return it to your DNS recursor, which will send it back to your browser.
+For maps.google.com, first, the DNS recursor will contact the root name server. The root name server will redirect it to the .com domain name server. .com
+name server will redirect it to the google.com name server. The google.com name server will find the matching IP address for maps.google.com in its’ DNS 
+records and return it to your DNS recursor, which will send it back to your browser.
 
-These requests are sent using small data packets that contain information such as the content of the request and the IP address it is destined for (IP address of the DNS recursor). These packets travel through multiple networking equipment between the client and the server before it reaches the correct DNS server. This equipment use routing tables to figure out which way is the fastest possible way for the packet to reach its’ destination. If these packets get lost, you’ll get a request failed error. Otherwise, they will reach the correct DNS server, grab the correct IP address, and come back to your browser.
+These requests are sent using small data packets that contain information such as the content of the request and the IP address it is destined for
+(IP address of the DNS recursor). These packets travel through multiple networking equipment between the client and the server before it reaches the 
+correct DNS server. This equipment use routing tables to figure out which way is the fastest possible way for the packet to reach its’ destination.
+If these packets get lost, you’ll get a request failed error. Otherwise, they will reach the correct DNS server, grab the correct IP address, and come
+back to your browser.
 
 4. The browser initiates a TCP connection with the server.
-Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol used for many types of HTTP requests.
+Once the browser receives the correct IP address, it will build a connection with the server that matches the IP address to transfer information. Browsers
+use internet protocols to build such connections. There are several different internet protocols that can be used, but TCP is the most common protocol 
+used for many types of HTTP requests.
 
-To transfer data packets between your computer(client) and the server, it is important to have a TCP connection established. This connection is established using a process called the TCP/IP three-way handshake. This is a three-step process where the client and the server exchange SYN(synchronize) and ACK(acknowledge) messages to establish a connection.
+To transfer data packets between your computer(client) and the server, it is important to have a TCP connection established. This connection is established
+using a process called the TCP/IP three-way handshake. This is a three-step process where the client and the server exchange SYN(synchronize) and ACK(acknow
+-ledge) messages to establish a connection.
 
 1. The client machine sends a SYN packet to the server over the internet, asking if it is open for new connections.
 
