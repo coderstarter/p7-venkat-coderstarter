@@ -1,0 +1,11 @@
+A web browser, also known as a “browser,” is an application software that allows users to find, access, display, and view websites. Microsoft Internet
+Explorer, Google Chrome, Mozilla Firefox, and Apple Safari are all popular web browsers.
+
+Web browsers are primarily used to display and access websites on the internet, as well as other content created with programming languages such as 
+Hypertext Markup Language (HTML) and Extensible Markup Language (XML) (XML). Browsers convert Hypertext Transfer Protocol (HTTP) web pages and websites 
+into human-readable content. They can also show other protocols and prefixes, such as secure HTTP (HTTPS), File Transfer Protocol (FTP), email handling
+(mailto:), and files (file:).
+
+A web browser’s primary function is to render HTML, the code that is used to design or “mark up” web pages. When a browser loads a web page, it processes
+the HTML, which may contain text, links, and references to images and other items like CSS and JavaScript functions. The browser then renders these objects
+in the browser window after processing them.
