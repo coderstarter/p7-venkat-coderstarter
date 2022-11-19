@@ -1,0 +1,55 @@
+.red-square {
+    background-color: red;
+    float: left;
+    width: 100px;
+    height: 100px;
+
+}
+
+.yellow-square {
+    background-color: yellow;
+    float: left;
+    width: 100px;
+    height: 100px;
+}
+
+.blue-square {
+    background-color: blue;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
+    margin-left: 0px;
+}
+
+.green-square {
+    background-color: green;
+    float: left;
+    width: 100px;
+    height: 100px;
+    margin-top: 0;
+    margin-left: 0px;
+}
+
+.first-row {
+    width: 200px;
+    height: 100px;
+}
+
+.second-row {
+    padding: 0px;
+    margin: 0px;
+}
+
+.container {
+    padding-left: 500px;
+    padding-top: 300px;
+    padding-right: 30%;
+}
+
+.red-square:hover {
+    padding-left: 400px;
+    height: 100px;
+    width: 100px;
+    transform: rotate(-90deg);
+}
