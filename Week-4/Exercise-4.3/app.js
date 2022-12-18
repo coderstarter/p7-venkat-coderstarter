@@ -28,7 +28,8 @@ const iterable = {
     }
 };
 
-const iter = iterable[Symbol.iterator](10);
+let user_value = window.prompt("Enter the range till you want to display the series")
+const iter = iterable[Symbol.iterator](user_value);
 console.log(iter.next())
 console.log(iter.next())
 console.log(iter.next())
