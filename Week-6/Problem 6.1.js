@@ -12,5 +12,6 @@ var maxSubArray = function(nums) {
     }
     return maxmium_till_last;
 };
-
+// time complexity: o(n) as we are iterating the array
+// space complexity: o(1)
 #https://leetcode.com/problems/maximum-subarray/submissions/865117463/
