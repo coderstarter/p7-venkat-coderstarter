@@ -28,4 +28,6 @@ var sortColors = function(nums) {
     }
 };
 
-https://leetcode.com/problems/sort-colors/submissions/865342293/
+// https://leetcode.com/problems/sort-colors/submissions/865342293/
+// space complexity: o(1)
+// time complexity: o(n) as single time iterating the array.
