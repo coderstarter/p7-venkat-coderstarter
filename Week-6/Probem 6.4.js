@@ -9,3 +9,9 @@ var maxProfit = function(prices) {
     }
     return maxprof;
 };
+
+
+// https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
+
+// time complexity: o(n) as we are iterating the array
+// space comp: o(1) there is no data structure used to store the data
