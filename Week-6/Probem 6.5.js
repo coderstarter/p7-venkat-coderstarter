@@ -1,26 +1,18 @@
-function compareNumbers(a, b) {
-  return a - b;
-}
-function solve(arr,N) {
-    
-    console.log(arr)
-    var mp = new Map();
-    const count = 0;
-    for (const key of arr) {
-        mp.set(key, count);
+function findPairWithDifference(A, B) {
+  let set = new Set();
+
+  for (let i = 0; i < A.length; i++) {
+    if (set.has(A[i] + B) || set.has(A[i] - B)) {
+      return 1;
     }
-    
-    for(let i=0;i<arr.length;i++){
-        if(mp.has(Math.abs(N-arr[i]))){
-            return true;
-        }
-        let count = mp.get(arr[i]);
-        mp.set(arr[i], count + 1);
-    }
-    return false;
+    set.add(A[i]);
+  }
+  return 0;
 }
 
 let arr= [5, 20, 3, 2, 5, 80];
-arr.sort(compareNumbers);
 N=78
-console.log(solve(arr,N))
+console.log(findPairWithDifference(arr,N))
+
+// time complexity : o(n) as iterating the array
+// space complexity: o(n) as we are using the set data structure in order to store the elements and to keep track
