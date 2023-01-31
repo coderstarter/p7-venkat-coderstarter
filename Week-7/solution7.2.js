@@ -78,18 +78,6 @@ class SingleLinkedList {
         array.push('null');
         console.log(array.join("->"))
     }
-    reverseLinkedList() {
-        var cur = this.head;
-        var prev = null;
-        var next = null;
-        while (cur != null) {
-            next = cur.next;
-            cur.next = prev;
-            prev = cur;
-            cur = next;
-        }
-        this.head = prev;
-    }
     rotateListByKthTimesRightSide(k) {
         if (this.head == null) {
             return null;
