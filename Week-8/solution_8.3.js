@@ -39,25 +39,27 @@ function inorderRec(root) {
 
 }
 function levelOrder() {
-    printInLevelOrder(root);
+    let ans = levelO(root);
+    return ans;
 }
 
-function printInLevelOrder(root) {
-    let q = [];
-    q.push(root);
-    while (q.length !== 0) {
-        let tempNode = q.shift();
-        console.log(tempNode.data);
-        if (tempNode.left !== null) {
-            q.push(tempNode.left);
+var levelO = function (root) {
+    if (root == null) return [];
+    let queue = [], values = [];
+    queue.push(root);
+    while (queue.length > 0) {
+        let len = queue.length, level = [];
+        for (let i = 0; i < len; i++) {
+            let node = queue.shift();
+            level.push(node.data);
+            if (node.left) queue.push(node.left);
+            if (node.right) queue.push(node.right);
         }
-        if (tempNode.right !== null) {
-            q.push(tempNode.right);
-        }
+        values.push(level);
     }
-
-}
-
+    return values;
+    // Time Complexity: O(n)
+};
 insert(50);
 insert(30);
 insert(20);
@@ -74,7 +76,4 @@ insert(60);
 
 inorder(); // as inorder traversal always give sorted data as follows left root right in bst case
 console.log('the level traveral of tree is :')
-levelOrder()
-
-// time comp: o(n) as iteratively iterating the tree n is number of nodes
-// space comp: o(n) for storing each level nodes.
+console.log(levelOrder())
