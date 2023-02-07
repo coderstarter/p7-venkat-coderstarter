@@ -74,3 +74,8 @@ insert(80);
 inorder(); // as inorder traversal always give sorted data as follows left root right in bst case
 console.log('the height of tree is :')
 console.log(maxDepht())
+
+
+
+// time complexity: o(n) where n is the number of nodes
+// space complexity: o(1)
