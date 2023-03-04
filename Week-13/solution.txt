@@ -1,0 +1,3 @@
+link repo : https://github.com/coderstarter/link-shortner
+
+submitted solution for week 13th
